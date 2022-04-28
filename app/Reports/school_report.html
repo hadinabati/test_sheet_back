@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static' , path='Css/school_report.css')}}">
+    <title>گزارش لیست مدارس ایجاد شده</title>
+    <style>
+        thead{
+            font-family: "B Titr";
+        }
+        tbody{
+            background-color: #b5d9cd;
+            font-family: "2  Yekan";
+
+        }
+
+        table {
+            margin-top: 3rem;
+            font-size: 10pt;
+            text-align: center;
+
+        }
+
+        td {
+            border: 1px solid #a8a8a8;
+            margin: 0px;
+            padding: 0px;
+
+        }
+    </style>
+</head>
+<body>
+<h1>{{name}}</h1>
+<hr>
+<table style="width: 100%">
+    <thead>
+    <tr>
+        <td> پایه</td>
+        <td> جنسیت</td>
+        <td> نام مدرسه</td>
+        <td> ردیف</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in data %}
+    <tr>
+        <td>{{item.paye}}</td>
+         <td>{{item.sex}}</td>
+         <td>{{item.name}}</td>
+         <td>{{item.row}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<img style="margin: 1rem ; width: 2rem ;height: 2rem" src="{{ url_for('static' , path='image/test.png')}}" alt="logo">
+
+
+</body>
+</html>
